@@ -1,0 +1,1 @@
+ALTER TABLE tab_customer ADD income DECIMAL NOT NULL;
