@@ -2,7 +2,6 @@ package edu.dio.credit.app.system.dto.Credit
 
 import edu.dio.credit.app.system.Model.Credit
 import java.math.BigDecimal
-import java.time.LocalDate
 import java.util.UUID
 
 data class CreditViewList(

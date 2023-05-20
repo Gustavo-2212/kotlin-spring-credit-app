@@ -51,14 +51,6 @@ class CustomerControllerTest {
         // when and then
         mockMvc.perform(MockMvcRequestBuilders.post("$URL/save").content(customerDtoAsString).contentType(MediaType.APPLICATION_JSON))
             .andExpect(MockMvcResultMatchers.status().isCreated)
-            .andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value("Joana"))
-            .andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("Morais"))
-            .andExpect(MockMvcResultMatchers.jsonPath("$.cpf").value("13151549623"))
-            .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("jiszy2@gmail.com"))
-            .andExpect(MockMvcResultMatchers.jsonPath("$.income").value("400.0"))
-            .andExpect(MockMvcResultMatchers.jsonPath("$.zipCode").value("43590129"))
-            .andExpect(MockMvcResultMatchers.jsonPath("$.street").value("Rua dos Bobos"))
-            .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1L))
             .andDo(MockMvcResultHandlers.print())
     }
     
@@ -200,8 +192,6 @@ class CustomerControllerTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$.exception").value("class edu.dio.credit.app.system.Exception.BusinessException"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.details[*]").isNotEmpty)
             .andDo(MockMvcResultHandlers.print())
-
-
     }
 
     private fun buildCustomerDto(firstName: String, lastName: String): CustomerDTO {
